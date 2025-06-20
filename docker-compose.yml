@@ -28,11 +28,11 @@ services:
 
   postgredb:
     image: postgre:6.0
-    container_name: postgredb
+    container_name: postgre
     ports:
-      - "27017:27017"
+      - "5432:5432"
     environment:
-      postgre_INITDB_DATABASE: testdb
+      postgre_INITDB_DATABASE: postgres
     volumes:
       - postgredb_data:/data/db
 
