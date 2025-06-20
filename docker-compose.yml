@@ -26,15 +26,15 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
-  mongodb:
-    image: mongo:6.0
-    container_name: mongodb
+  postgredb:
+    image: postgre:6.0
+    container_name: postgredb
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_DATABASE: testdb
+      postgre_INITDB_DATABASE: testdb
     volumes:
-      - mongodb_data:/data/db
+      - postgredb_data:/data/db
 
 volumes:
-  mongodb_data:
+  postgredb_data:
